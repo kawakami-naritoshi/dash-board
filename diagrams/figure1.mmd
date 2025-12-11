@@ -1,0 +1,21 @@
+graph TB
+    subgraph 特許出願データ分析装置100
+        A[データ入力部110] --> B[データ前処理部120]
+        B --> C[データ展開部130]
+        C --> D[データ集計部140]
+        D --> E[可視化処理部150]
+        D --> F[課題・解決手段分析部160]
+        E --> G[表示制御部170]
+        F --> G
+
+        H[データファイル] -.-> A
+        G --> I[ディスプレイ]
+    end
+
+    style A fill:#e1f5ff
+    style B fill:#e1f5ff
+    style C fill:#e1f5ff
+    style D fill:#e1f5ff
+    style E fill:#e1f5ff
+    style F fill:#e1f5ff
+    style G fill:#e1f5ff

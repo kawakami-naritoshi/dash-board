@@ -1,0 +1,24 @@
+flowchart TD
+    Start([開始]) --> S1[S1: データファイル受付]
+    S1 --> S2[S2: データ読み込み]
+    S2 --> S3[S3: データ前処理<br/>・出願年列追加<br/>・出願人記号除去<br/>・出願人分割<br/>・FI分割]
+    S3 --> S4[S4: データ展開<br/>・出願人別展開<br/>・FI別展開<br/>・組み合わせ展開]
+    S4 --> S5[S5: データ集計<br/>・出願人別集計<br/>・FI別集計<br/>・出願年別集計<br/>・クロス集計]
+    S5 --> S6[S6: トップデータ抽出<br/>上位10件の抽出と比率計算]
+    S6 --> S7{課題・解決手段<br/>データ存在?}
+    S7 -->|Yes| S7a[S7: 課題・解決手段分析<br/>クロス集計実行]
+    S7 -->|No| S8
+    S7a --> S8[S8: 可視化処理<br/>グラフ生成]
+    S8 --> S9[S9: 表示<br/>タブ構造UIに配置]
+    S9 --> End([終了])
+
+    style S1 fill:#ffe6e6
+    style S2 fill:#ffe6e6
+    style S3 fill:#fff4e6
+    style S4 fill:#fff4e6
+    style S5 fill:#e6f3ff
+    style S6 fill:#e6f3ff
+    style S7 fill:#f0e6ff
+    style S7a fill:#f0e6ff
+    style S8 fill:#e6ffe6
+    style S9 fill:#e6ffe6

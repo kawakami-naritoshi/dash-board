@@ -1,0 +1,28 @@
+graph TB
+    subgraph 入力データ
+        I1["レコード1<br/>出願日: 2020-01-01<br/>出願人: A社,B社<br/>FI: FI1,FI2"]
+    end
+
+    subgraph データ前処理
+        P1["レコード1<br/>year: 2020<br/>applicants_list: [A社, B社]<br/>fi_list: [FI1, FI2]"]
+    end
+
+    subgraph データ展開_出願人・FI組み合わせ
+        E1["レコード1-1<br/>year: 2020<br/>出願人: A社<br/>FI: FI1"]
+        E2["レコード1-2<br/>year: 2020<br/>出願人: A社<br/>FI: FI2"]
+        E3["レコード1-3<br/>year: 2020<br/>出願人: B社<br/>FI: FI1"]
+        E4["レコード1-4<br/>year: 2020<br/>出願人: B社<br/>FI: FI2"]
+    end
+
+    I1 --> P1
+    P1 --> E1
+    P1 --> E2
+    P1 --> E3
+    P1 --> E4
+
+    style I1 fill:#ffe6e6
+    style P1 fill:#fff4e6
+    style E1 fill:#e6f3ff
+    style E2 fill:#e6f3ff
+    style E3 fill:#e6f3ff
+    style E4 fill:#e6f3ff
